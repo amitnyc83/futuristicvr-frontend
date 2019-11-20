@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import HomePage from '../src/Components/HomePage';
 import Games from '../src/Components/Games';
 import LoginForm from '../src/Components/LoginForm';
-import SignUpForm from '../src/Components/SignUpForm';
+import SignUpPage from '../src/Components/SignUpPage';
 import NavBar from '../src/Components/NavBar';
+import AdminPage from '../src/Components/AdminPage';
 import HoursOfOperation from '../src/Components/HoursOfOperation';
 import Footer from '../src/Components/Footer';
 import './App.css';
-import { Switch, withRouter, Route } from 'react-router-dom'
+import { Switch, withRouter, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 
 class App extends Component {
@@ -17,8 +19,9 @@ class App extends Component {
         <NavBar />
         <Switch>
           <Route path="/login" exact render={(renderProps) => (<LoginForm renderProps={renderProps}/> )} />
-          <Route path="/signup" exact render={(renderProps) => (<SignUpForm renderProps={renderProps}/> )} />
+          <Route path="/signup" exact render={(renderProps) => (<SignUpPage renderProps={renderProps}/> )} />
           <Route path="/" exact render={() => (<HomePage />)} />
+          <Route path="/admin" exact render={() => (<AdminPage />)} />
           <Route path="/hours" exact render={() => (<HoursOfOperation />)} />
           <Route path="/games" exact render={(renderProps) => (<Games renderProps={renderProps}/> )} />
         </Switch>
