@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import HomePage from '../src/Components/HomePage';
 import Games from '../src/Components/Games';
-import LoginForm from '../src/Components/LoginForm';
+import LoginPage from '../src/Components/LoginPage';
 import SignUpPage from '../src/Components/SignUpPage';
 import NavBar from '../src/Components/NavBar';
 import AdminPage from '../src/Components/AdminPage';
@@ -18,7 +18,7 @@ class App extends Component {
       <React.Fragment>
         <NavBar />
         <Switch>
-          <Route path="/login" exact render={(renderProps) => (<LoginForm renderProps={renderProps}/> )} />
+          <Route path="/login" exact render={(renderProps) => (<LoginPage renderProps={renderProps}/> )} />
           <Route path="/signup" exact render={(renderProps) => (<SignUpPage renderProps={renderProps}/> )} />
           <Route path="/" exact render={() => (<HomePage />)} />
           <Route path="/admin" exact render={() => (<AdminPage />)} />

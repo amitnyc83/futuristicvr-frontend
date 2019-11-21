@@ -2,11 +2,18 @@ import React, { Component } from "react";
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBDropdown,
 MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBIcon } from "mdbreact";
 import { BrowserRouter as Router } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { deleteUser } from '../Store/Actions/userActions'
 
 class NavBar extends Component {
 state = {
   isOpen: false
 };
+
+deleteToken = () => {
+  localStorage.removeItem('token')
+  this.props.deleteUser()
+}
 
 toggleCollapse = () => {
   this.setState({ isOpen: !this.state.isOpen });
@@ -34,6 +41,7 @@ render() {
             <MDBNavItem>
               <MDBNavLink to="/events">Events</MDBNavLink>
             </MDBNavItem>
+            {this.props.currentUser.type === "Customer" ? <MDBNavItem><MDBNavLink to="/reservations">{this.props.currentUser.username} Reservations</MDBNavLink></MDBNavItem> : null}
             <MDBNavItem>
               <MDBDropdown>
                 <MDBDropdownToggle nav caret>
@@ -57,7 +65,7 @@ render() {
                 <MDBDropdownMenu className="dropdown-default">
                   <MDBDropdownItem href="/login">LogIn</MDBDropdownItem>
                   <MDBDropdownItem href="/signup">SignUp</MDBDropdownItem>
-                  <MDBDropdownItem href="/logout">LogOut</MDBDropdownItem>
+                  {this.props.currentUser ? <MDBDropdownItem href="/" onClick={this.deleteToken}>LogOut</MDBDropdownItem> : null }
                 </MDBDropdownMenu>
               </MDBDropdown>
             </MDBNavItem>
@@ -69,4 +77,16 @@ render() {
   }
 }
 
-export default NavBar;
+const mapStateToProps = state => {
+  return {
+    currentUser: state.user.user
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    deleteUser: () => dispatch({type: "DELETE_USER"})
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
