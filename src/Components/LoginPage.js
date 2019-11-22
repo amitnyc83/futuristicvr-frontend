@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { currentUser } from '../Store/Actions/userActions';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBInput, MDBBtn, MDBIcon, MDBModalFooter } from 'mdbreact';
 
 class LoginPage extends Component {
@@ -20,8 +23,8 @@ class LoginPage extends Component {
     })
   }
 
-  signInHandleSubmit = (event) => {
-    event.preventDefault()
+  signInHandleSubmit = (e) => {
+    e.preventDefault()
     fetch(`http://localhost:3001/login`,{
       method: "POST",
       headers: {
@@ -63,13 +66,14 @@ class LoginPage extends Component {
               }}
             >
              <MDBCardBody>
-               <form onSubmit={(event) => this.signInHandleSubmit(event)}>
+               <form onSubmit={(e) => this.signInHandleSubmit(e)}>
                  <p className="h4 text-center py-4">Sign In</p>
                   <div className="grey-text">
                    <MDBInput
                      label="Your email"
                      group
                      type="email"
+                     name="email"
                      validate
                      error="wrong"
                      success="right"
@@ -80,6 +84,7 @@ class LoginPage extends Component {
                      label="Your password"
                      group
                      type="password"
+                     name="password"
                      validate
                      containerClass="mb-0"
                      onChange={this.signInHandleChange}
@@ -87,7 +92,7 @@ class LoginPage extends Component {
                     />
                     <div className="text-center py-4 mt-3">
                       <MDBBtn
-                        type="button"
+                        type="submit"
                         gradient="blue"
                         rounded
                       >
@@ -121,7 +126,7 @@ class LoginPage extends Component {
              <MDBModalFooter className="mx-5 pt-3 mb-1">
                <p className="font-small grey-text d-flex justify-content-end">
                  Not a member?
-                 <a href="#!" className="blue-text ml-1">
+                 <a href="/signup" className="blue-text ml-1">
                    Sign Up
                  </a>
                </p>
@@ -134,4 +139,11 @@ class LoginPage extends Component {
   }
 };
 
-export default LoginPage;
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    currentUser: (theuser) => {dispatch({type: "CURRENT_USER", payload: theuser})}
+  }
+}
+
+export default withRouter(connect(null, mapDispatchToProps)(LoginPage));
