@@ -1,19 +1,40 @@
 import React, { Component } from 'react';
+import { MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact';
 
-export default class GameContainer extends Component {
+class GameContainer extends Component {
 
-  mapGame = () => {
+  mapGames = () => {
     return this.props.game.map(game => {
-      return <div><h3>{game.name}</h3><h3>{game.description}</h3></div>
+      return (
+        <div className="flex-container" key={game.id}>
+        <MDBCol>
+         <MDBCard style={{ width: "22rem", display: "flex"}}>
+           <MDBCardImage className="img-fluid" src={game.image} waves alt={game.name} />
+           <MDBCardBody>
+             <MDBCardTitle>{game.name}</MDBCardTitle>
+             <MDBCardText>
+               {game.description}
+             </MDBCardText>
+           </MDBCardBody>
+         </MDBCard>
+        </MDBCol>
+        </div>
+      )
     })
   }
 
 
-  render(){
-    return (
-      <div>
-        {this.mapGame()}
-      </div>
+
+
+ render() {
+   return (
+     <div>
+       {this.mapGames()}
+     </div>
     )
   }
 }
+
+
+
+export default GameContainer

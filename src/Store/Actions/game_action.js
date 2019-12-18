@@ -5,3 +5,11 @@ export function fetchGames() {
     .then((data) => dispatch({type: "FETCH_GAMES", payload: data}))
   }
 }
+
+
+export const addGame = (newGame) => {
+  return {
+    type: "ADD_GAME",
+    payload: newGame
+  }
+}
