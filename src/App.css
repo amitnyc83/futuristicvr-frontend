@@ -14,3 +14,45 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+
+.add-product-form {
+  font-size: 15px;
+  font-family: 'Yantramanav', sans-serif;
+  padding: 0px;
+  border-bottom: 2px solid black;
+  margin-bottom: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-bottom: 15px;
+}
+
+
+.add-product-sign {
+  text-align: center;
+  font-size: 50px;
+  margin-top: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: white;
+  height: 60px;
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: lightblue;
+  border-radius: 4px;
+  font-weight: 700;
+  margin-bottom: 50px;
+
+}
+
+div.games-collections-title {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
