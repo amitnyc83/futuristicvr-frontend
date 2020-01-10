@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { fetchGames } from '../Store/Actions/game_action';
-import GameContainer from '../Containers/GameContainer';
 import Pricing from '../Components/Pricing';
 import {  MDBMask, MDBRow, MDBCol,  MDBBtn, MDBView, MDBContainer } from "mdbreact";
 
@@ -10,13 +7,7 @@ import {  MDBMask, MDBRow, MDBCol,  MDBBtn, MDBView, MDBContainer } from "mdbrea
 class HomePage extends Component {
 
 
-  componentDidMount(){
-    this.props.fetchGames()
-  }
 
-  mapGames = () => {
-    return (this.props.vrGames.allGames[0] ? <GameContainer game={this.props.vrGames.allGames[0]} /> : null )
-  }
 
 
  render() {
@@ -36,24 +27,15 @@ class HomePage extends Component {
             </MDBContainer>
           </MDBMask>
         </MDBView>
-       {this.mapGames()}
        <Pricing />
      </div>
    )
  }
 }
 
-const mapStateToProps = ({games}) => {
-  return {
-    vrGames: games
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchGames: () => dispatch(fetchGames())
-  }
-}
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
+
+
+
+export default (HomePage);
