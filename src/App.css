@@ -16,6 +16,14 @@
 }
 
 
+.game-attribute {
+  float: left;
+  display: inline;
+  width: 49%;
+}
+
+
+
 .add-product-form {
   font-size: 15px;
   font-family: 'Yantramanav', sans-serif;
@@ -49,10 +57,30 @@
 div.games-collections-title {
   text-align: center;
   margin-top: 50px;
+  color: #4C4480;
 }
 
 .flex-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+
+input:focus, select {
+  background-color: rgb(126, 182, 240);
+  width: 5%;
+  padding: 8px 5px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: white;
+  weight: 700;
+  font-size: 15px;
+  /* box-sizing: border-box; */
+}
+
+label {
+  padding: 5px;
 }

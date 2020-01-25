@@ -5,6 +5,7 @@ import LoginPage from '../src/Components/LoginPage';
 import SignUpPage from '../src/Components/SignUpPage';
 import NavBar from '../src/Components/NavBar';
 import AdminPage from '../src/Components/AdminPage';
+import Faq from '../src/Components/Faq';
 import HoursOfOperation from '../src/Components/HoursOfOperation';
 import Pricing from '../src/Components/Pricing';
 import ContactUs from '../src/Components/ContactUs';
@@ -50,6 +51,7 @@ class App extends Component {
           <Route path="/hours" exact render={() => (<HoursOfOperation />)} />
           <Route path="/careers" exact render={() => (<Careers />)} />
           <Route path="/games" exact render={(renderProps) => (<GamePage renderProps={renderProps}/> )} />
+          <Route path="/faq" exact render={() => (<Faq />)} />
           <Route path="/pricing" exact render={() => (<Pricing /> )} />
           <Route path="/contact" exact render={() => (<ContactUs /> )} />
           <Route path="/admin" exact render={() => (<AdminPage />)} />
