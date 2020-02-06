@@ -1,26 +1,48 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import  GameContainer  from '../Containers/GameContainer'
 import { fetchGames } from '../Store/Actions/game_action';
+import AdminGameContainer from '../Containers/AdminGameContainer';
+import { withRouter } from 'react-router-dom'
+
 
 
 
 class AdminPage extends Component {
 
 
-  componentDidMount() {
-    this.props.fetchGames()
+  componentDidMount(){
+    let token = localStorage.getItem('token')
+    if (token){
+      fetch(`http://localhost:3001/currentuser`, {
+        headers: {
+          "Content-Type": "application/json",
+          Accepts: "application/json",
+          Authorization: token
+        }
+      }).then(response => response.json())
+      .then(resp => {
+        this.props.fetchGames()
+      })
+    } else {
+      this.props.history.push('/login')
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.vrGames.allGames.length !== this.props.vrGames.allGames.length) {
+      this.props.fetchGames()
+    }
   }
 
   mapGames = () => {
-    return (this.props.vrGames.allGamess ? <GameContainer game={this.props.vrGamess.allGames} /> : null )
+    return (this.props.vrGames.allGames ? <AdminGameContainer game={this.props.vrGames.allGames} /> : null )
   }
 
 
   render() {
     return (
       <React.Fragment>
-        This AdminCentral!
+        <div className="h1-responsive font-weight-bold text-center my-5 white-text">Welcome to Your Admin Page</div>
         {this.mapGames()}
       </React.Fragment>
     )
@@ -37,7 +59,7 @@ const mapStateToProps = ({games}) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchGames: () => (fetchGames())
+    fetchGames: () => dispatch(fetchGames())
   }
 }
 

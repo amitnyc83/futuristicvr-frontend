@@ -55,16 +55,10 @@ class LoginPage extends Component {
 
   render(){
     return (
-      <MDBContainer>
-       <MDBRow>
-         <MDBCol md="4">
-           <MDBCard
-             className='card-image'
-             style={{
-               backgroundImage: 'url(https://mdbootstrap.com/img/Photos/Others/pricing-table7.jpg)',
-               width: '28rem'
-              }}
-            >
+      <MDBContainer >
+        <MDBRow>
+          <MDBCol md="6">
+           <MDBCard >
              <MDBCardBody>
                <form onSubmit={(e) => this.signInHandleSubmit(e)}>
                  <p className="h4 text-center py-4">Sign In</p>
