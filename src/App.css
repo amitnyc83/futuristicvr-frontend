@@ -22,9 +22,40 @@
   width: 49%;
 }
 
+.img-sizing {
+  max-height: 200px;
+ max-width: none;
+ min-width: 100%;
+ min-height: 100px;
+}
 
+.login-card {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:400px;
+  height:600px;
+}
 
-.add-product-form {
+html,
+body {
+  height: 100%;
+}
+
+.add-game-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: grey
+}
+
+.add-game-card {
+ margin: auto;
+ width: 50%;
+}
+
+/* .add-product-form {
   font-size: 15px;
   font-family: 'Yantramanav', sans-serif;
   padding: 0px;
@@ -33,10 +64,10 @@
   margin-left: 20px;
   margin-right: 20px;
   padding-bottom: 15px;
-}
+} */
 
 
-.add-product-sign {
+/* .add-product-sign {
   text-align: center;
   font-size: 50px;
   margin-top: 40px;
@@ -52,7 +83,7 @@
   font-weight: 700;
   margin-bottom: 50px;
 
-}
+} */
 
 div.games-collections-title {
   text-align: center;
@@ -60,11 +91,7 @@ div.games-collections-title {
   color: #4C4480;
 }
 
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+
 
 
 input:focus, select {
