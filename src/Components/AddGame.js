@@ -57,33 +57,38 @@ class AddGame extends Component {
   render(){
     return(
       <React.Fragment>
+        <MDBRow>
+          <MDBCol md="6" className="add-game-card">
+            <MDBCard>
+              <MDBCardBody>
+                <form onSubmit={this.handleSubmit}>
+                  <p className="h4 text-center py-4">ADD A NEW GAME HERE</p>
+                  <div class="form-check form-check-inline">
+                  <label>Name</label>
+                  <input name="name" type="text" onChange={this.handleChange} value={this.state.value}/>
+                  </div>
+                  <div class="form-check form-check-inline">
+                  <label>Genre</label>
+                  <input name="genre" type="text" onChange={this.handleChange}  value={this.state.value}/>
+                  </div>
+                  <br></br>
+                  <label>Description</label>
+                  <textarea  rows="5" name="description" onChange={this.handleChange} value={this.state.value}/>
+                  <br></br>
+                  <MDBBtn gradient="blue" href="#" id="upload_widget_opener" onClick={this.imageSubmit}>Add Game</MDBBtn>
+                  <div class="form-check form-check-inline">
+                    <CloudinaryContext cloudName="amitscloudmanager">
+                      <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+                      <script>cloudinary.setCloudName(amitscloudmanager);</script>
+                      <MDBBtn gradient="blue" href="#" id="upload_widget_opener" onClick={this.imageSubmit}>Add Image</MDBBtn>
+                    </CloudinaryContext>
+                  </div>
+                </form>
 
-          <MDBRow>
-            <MDBCol md="6" className="add-game-card">
-              <MDBCard>
-                <MDBCardBody>
-        <form onSubmit={this.handleSubmit}>
-          <p className="h4 text-center py-4">ADD A NEW GAME HERE</p>
-          <label>Name</label>
-          <input name="name" type="text" onChange={this.handleChange} placeholder="Name" value={this.state.value}/>
-          <br></br>
-          <label>Genre</label>
-          <input name="genre" type="text" onChange={this.handleChange} placeholder="Genre" value={this.state.value}/>
-          <br></br>
-          <label>Description</label>
-          <input name="description" type="textbox" onChange={this.handleChange} placeholder="description" value={this.state.value}/>
-          <br></br>
-          <MDBBtn gradient="blue" href="#" id="upload_widget_opener" onClick={this.imageSubmit}>Add Game</MDBBtn>
-        </form>
-        <CloudinaryContext cloudName="amitscloudmanager">
-         <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
-         <script>cloudinary.setCloudName(amitscloudmanager);</script>
-         <MDBBtn gradient="blue" href="#" id="upload_widget_opener" onClick={this.imageSubmit}>Add Image</MDBBtn>
-        </CloudinaryContext>
-      </MDBCardBody>
-      </MDBCard>
-      </MDBCol>
-    </MDBRow>
+              </MDBCardBody>
+            </MDBCard>
+          </MDBCol>
+        </MDBRow>
 
       </React.Fragment>
     );

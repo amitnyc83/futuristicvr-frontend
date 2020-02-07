@@ -52,8 +52,22 @@ body {
 
 .add-game-card {
  margin: auto;
- width: 50%;
+ width: 100%;
 }
+
+textarea {
+  width: 100%;
+}
+
+input {
+  width: 100%;
+}
+
+label {
+  display: block;
+}
+
+
 
 /* .add-product-form {
   font-size: 15px;
