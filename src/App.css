@@ -96,6 +96,17 @@ label {
 
 }
 
+.picture-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.picture-flex-item{
+  width: 100%
+}
+
 
 
 /* .add-product-form {

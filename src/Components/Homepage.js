@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Pricing from '../Components/Pricing';
+import GamePage from '../Components/GamePage';
+import GameButton from '../Components/GameButton';
+import VrGamingPicture from '../Containers/VrGamingPicture';
 import {  MDBMask, MDBRow, MDBCol,  MDBBtn, MDBView, MDBContainer } from "mdbreact";
 
 
@@ -28,6 +31,7 @@ class HomePage extends Component {
           </MDBMask>
         </MDBView>
        <Pricing />
+       <VrGamingPicture />
      </div>
    )
  }
@@ -38,4 +42,4 @@ class HomePage extends Component {
 
 
 
-export default (HomePage);
+export default HomePage;
