@@ -18,6 +18,8 @@ import index from '../src/Store/Reducers/index'
 
 const store = createStore(index, composeWithDevTools(applyMiddleware(thunk)))
 
+
+
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>

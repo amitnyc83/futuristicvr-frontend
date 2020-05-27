@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchGames } from '../Store/Actions/game_action';
 import AdminGameContainer from '../Containers/AdminGameContainer';
-import { withRouter } from 'react-router-dom'
+
 
 
 

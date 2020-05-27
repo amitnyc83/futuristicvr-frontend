@@ -63,11 +63,11 @@ class AddGame extends Component {
               <MDBCardBody>
                 <form onSubmit={this.handleSubmit}>
                   <p className="h4 text-center py-4">ADD A NEW GAME HERE</p>
-                  <div class="form-check form-check-inline">
+                  <div className="form-check form-check-inline">
                   <label>Name</label>
                   <input name="name" type="text" onChange={this.handleChange} value={this.state.value}/>
                   </div>
-                  <div class="form-check form-check-inline">
+                  <div className="form-check form-check-inline">
                   <label>Genre</label>
                   <input name="genre" type="text" onChange={this.handleChange}  value={this.state.value}/>
                   </div>
@@ -76,7 +76,7 @@ class AddGame extends Component {
                   <textarea  rows="5" name="description" onChange={this.handleChange} value={this.state.value}/>
                   <br></br>
                   <MDBBtn gradient="blue" href="#" id="upload_widget_opener" onClick={this.imageSubmit}>Add Game</MDBBtn>
-                  <div class="form-check form-check-inline">
+                  <div className="form-check form-check-inline">
                     <CloudinaryContext cloudName="amitscloudmanager">
                       <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
                       <script>cloudinary.setCloudName(amitscloudmanager);</script>
@@ -84,7 +84,6 @@ class AddGame extends Component {
                     </CloudinaryContext>
                   </div>
                 </form>
-
               </MDBCardBody>
             </MDBCard>
           </MDBCol>

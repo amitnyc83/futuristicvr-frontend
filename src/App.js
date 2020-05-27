@@ -11,6 +11,7 @@ import Pricing from '../src/Components/Pricing';
 import ContactUs from '../src/Components/ContactUs';
 import Footer from '../src/Components/Footer';
 import Careers from '../src/Containers/Careers';
+
 import './App.css';
 import { Switch, withRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -20,7 +21,7 @@ import { connect } from 'react-redux';
 
 class App extends Component {
 
-  componentDidMount = () => {
+  componentDidMount(){
     let token = localStorage.getItem('token')
     if (token) {
       fetch(`http://localhost:3001/current_user`, {

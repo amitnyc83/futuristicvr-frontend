@@ -1,23 +1,23 @@
 import React, { Component } from "react";
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBDropdown,
 MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBIcon } from "mdbreact";
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { deleteUser } from '../Store/Actions/userActions'
 
 class NavBar extends Component {
-state = {
-  isOpen: false
-};
+ state = {
+   isOpen: false
+  };
 
-deleteToken = () => {
-  localStorage.removeItem('token')
-  this.props.deleteUser()
-}
+  deleteToken = () => {
+   localStorage.removeItem('token')
+   this.props.deleteUser()
+  }
 
-toggleCollapse = () => {
-  this.setState({ isOpen: !this.state.isOpen });
-}
+  toggleCollapse = () => {
+   this.setState({ isOpen: !this.state.isOpen });
+  }
 
 render() {
   return (

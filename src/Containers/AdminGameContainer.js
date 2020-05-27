@@ -55,7 +55,7 @@ class AdminGameContainer extends Component {
           <label>Name</label>
           <input name="name" type="text" onChange={(event) => this.handleChange(event, gameInfo)} placeholder={gameInfo.name} value={this.state.value}/>
           <br></br>
-          <img src={gameInfo.image} />
+          <img src={gameInfo.image} alt={gameInfo.name} />
           <br></br>
           <label>Description</label>
           <input name="description" type="textbox" onChange={(event) => this.handleChange(event, gameInfo)} placeholder={gameInfo.decsription} value={this.state.value}/>
@@ -63,7 +63,7 @@ class AdminGameContainer extends Component {
           <MDBBtn gradient="blue">Update Game</MDBBtn>
         </form>
         <div>
-          <img src={gameInfo.image} />
+          <img src={gameInfo.image} alt={gameInfo.image} />
           <MDBBtn gradient="blue" onClick={(event) => this.deleteGame(event, gameInfo)}>Delete Game</MDBBtn>
         </div>
       </div>

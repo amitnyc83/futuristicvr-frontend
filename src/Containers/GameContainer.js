@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import IndividualGamePage from '../Components/IndividualGamePage';
+// import IndividualGamePage from '../Components/IndividualGamePage';
 import { MDBContainer, MDBRow, MDBCol, MDBCardGroup, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText } from 'mdbreact';
 
 
@@ -38,7 +38,7 @@ class GameContainer extends Component {
 
   render(){
    return (
-     <div>
+     <div className="game-container">
         {this.mapGame()}
       </div>
     )
